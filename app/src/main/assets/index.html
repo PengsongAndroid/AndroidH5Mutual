@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    <script language="javascript" type="text/javascript">
+            function getFromAndroid(str){    //接收来自android的数据
+            document.getElementById("android").innerHTML=str;
+            }
+            function sendToAndroid(){
+            console.log("!!!!!!!!!I'm sending to android!!!!!!!!!");
+            var str = "the data is from JavaScript!";
+            window.android.runOnAndroidJavaScript(str);//通过injs接口调用android的函数
+            }
+            function ale()
+            {
+            alert("This is an alert!");
+            }
+
+    </script>
+</head>
+<body>
+<div><input type="submit" name="Submit" value="alert" onclick="ale()"/></div>
+
+<input type="button" value="Send To Android" onclick="sendToAndroid()"/>
+<div id="android">JavaScript item</div>
+
+</body>
+</html>
